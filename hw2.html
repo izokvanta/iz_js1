@@ -128,20 +128,24 @@
         
         function mathOperation (x, y, operation) {
             switch(operation) {
-                    Case ("Calc_sum"):
-                    return function Calc_sum(x, y);
+                    Case 'Calc_sum':
+                    function Calc_sum(x, y);
                     break;
-                    Case ("Calc_subst"):
-                    return function Calc_subst(x, y);
+                    Case 'Calc_subst':
+                    function Calc_subst(x, y);
                     break;
-                    Case ("Calc_division"):
-                    return function Calc_division(x, y);
+                    Case 'Calc_division':
+                    function Calc_division(x, y);
                     break;
+                    Case 'Calc_mult':
+                    function Calc_mult(x, y);
+                    break;
+                    
                     
             
             }}
-        var operation = prompt('введите функцию Calc_sum, Calc_subst,Calc_division ');    
-        var a = mathOperation (x,y, operation);    
+        var cals_func = prompt('введите функцию Calc_sum, Calc_subst,Calc_division ');    
+        var a = mathOperation (x,y, cals_func);    
         alert ("result of mathOperation" & a);    
         
                 
