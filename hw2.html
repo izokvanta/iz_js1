@@ -93,13 +93,13 @@
 
         var x = prompt('введите значение x'),
             y = prompt('введите значение y')
-        
+
         function Calc_sum(x, y) { //Функция сложения
             return +x + +y;
         }
 
         var a = Calc_sum(x, y);
-        alert(a);
+        alert("Сумма= " + a);
 
 
         function Calc_subst(x, y) { //Функция вычитания
@@ -107,7 +107,7 @@
         }
 
         var a = Calc_subst(x, y);
-        alert(a);
+        alert("Вычитание =" + a);
 
 
         function Calc_division(x, y) { //Функция деления
@@ -115,48 +115,49 @@
         }
 
         var a = Calc_division(x, y);
-        alert(a);
+        alert("Деление=" + a);
 
         function Calc_mult(x, y) { //Функция Умножения
             return x * y;
         }
 
         var a = Calc_mult(x, y);
-        alert(a);
-        
+        alert("Умножение=" + a);
+
         //______________________________________________TASK6_________________________________________
-        
-        function mathOperation (x, y, operation) {
-            switch(operation) {
-                    Case 'Calc_sum':
-                    function Calc_sum(x, y);
+
+        function mathOperation(x, y, operation) {
+            switch (operation) {
+                case 'Calc_sum':
+                    return Calc_sum(x, y);
+                   
                     break;
-                    Case 'Calc_subst':
-                    function Calc_subst(x, y);
+                case 'Calc_subst':
+                    return Calc_subst(x, y);
+                   
                     break;
-                    Case 'Calc_division':
-                    function Calc_division(x, y);
+                case 'Calc_division':
+                    return Calc_division(x, y);
+          
                     break;
-                    Case 'Calc_mult':
-                    function Calc_mult(x, y);
-                    break;
+                case 'Calc_mult':
+                    return Calc_mult(x, y);
                     
-                    
-            
-            }}
-        var cals_func = prompt('введите функцию Calc_sum, Calc_subst,Calc_division ');    
-        var a = mathOperation (x,y, cals_func);    
-        alert ("result of mathOperation" & a);    
-        
-                
-            
-        
-        
-        
-        
-        
-        
-        
+                    break;
+
+
+
+            }
+        }
+        var operation = prompt('введите функцию Calc_sum, Calc_subst, Calc_division,Calc_mult ');
+
+        alert("Результат новой функции " +mathOperation(x, y, operation));
+
+
+
+
+
+        r
     </script>
 
 
