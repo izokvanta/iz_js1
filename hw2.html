@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS_1</title>
+
+</head>
+
+<body>
+
+
+    <script>
+        // ________________________________task1_____________________________________        
+        /*var a = 1, b = 1, c, d;
+        c = ++a; alert(c); // 2 (префиксная форма) вызов ++a увеличит переменную, а затем вернёт ее значение в c. Так что в c попадёт значение a после увеличения
+        d = b++; alert(d); // 1 (Постфиксная форма) b++ возвращает старое значение, бывшее до увеличения.В примере в d попадёт старое значение b, равное 1
+        c = (2+ ++a); alert(c); // 5 Раннее посредством префиксной формы ++a стало 2; 2+ складывается с ещё одним префиксным увеличением  ++а - становится 3, соответственно 2+3=5
+        d = (2+ b++); alert(d); // 4  в примере ранне в d попало старое значение, а (b++) увеличилось на 1, тут мы тоже увеличиваем на 1, (было бы 3) но тк посфиксная форма возвращает старое значение получается 2+ 2= 4
+        alert(a); // 3 Мы в первом примере (++а) увеличили на 1, получилось 2, и в третьем примере увеличили на 1, получилось 3.
+        alert(b); // 3 Мы во втром примере (B++) Увеличили на 1, получилось 2, и в четвертом примере увелочили на 1 получилось 3.*/
+
+
+        // ________________________________task2_____________________________________         
+        /*var a = 2;
+        var x = 1 + (a *= 2); // x= 1+2*2=5
+        alert(x)//Ответ : 5  */
+
+        // ________________________________task3_____________________________________   
+        /*var a = prompt('введите значение a'),
+            b = prompt('введите значение b')
+        if (a >= 0 && b >= 0) {
+            alert(a - b);
+        } else if (a < 0 && b < 0) {
+            alert(a * b);
+        } else if (a < 0 && b >= 0 || a >=0 && b < 0) {
+            alert(+a + +b);
+        }*/
+
+        // ________________________________task4_____________________________________
+
+        /* var a = Math.floor(Math.random() * 16)
+        alert("Рандомное число " + a)
+        switch (a) {
+            case 0:
+                var a = a+1;
+                alert(a);
+            case 1:
+                var a = a + 1;
+                alert(a);
+            case 2:
+                var a = a + 1;
+                alert(a);
+            case 3:
+                var a = a + 1;
+                alert(a);
+            case 4:
+                var a = a + 1;
+                alert(a);
+            case 5:
+                var a = a + 1;
+                alert(a);
+            case 6:
+                var a = a + 1;
+                alert(a);
+            case 7:
+                var a = a + 1;
+                alert(a);
+            case 8:
+                var a = a + 1;
+                alert(a);
+            case 9:
+                var a = a + 1;
+                alert(a);
+            case 10:
+                var a = a + 1;
+                alert(a);
+            case 11:
+                var a = a + 1;
+                alert(a);
+            case 12:
+                var a = a + 1;
+                alert(a);
+            case 13:
+                var a = a + 1;
+                alert(a);
+            case 14:
+                var a = a + 1;
+                alert(a);
+        } */
+
+        // ________________________________task5_____________________________________    
+
+        var x = prompt('введите значение x'),
+            y = prompt('введите значение y')
+        
+        function Calc_sum(x, y) { //Функция сложения
+            return +x + +y;
+        }
+
+        var a = Calc_sum(x, y);
+        alert(a);
+
+
+        function Calc_subst(x, y) { //Функция вычитания
+            return x - y;
+        }
+
+        var a = Calc_subst(x, y);
+        alert(a);
+
+
+        function Calc_division(x, y) { //Функция деления
+            return x / y;
+        }
+
+        var a = Calc_division(x, y);
+        alert(a);
+
+        function Calc_mult(x, y) { //Функция Умножения
+            return x * y;
+        }
+
+        var a = Calc_mult(x, y);
+        alert(a);
+        
+        //______________________________________________TASK6_________________________________________
+        
+        function mathOperation (x, y, operation) {
+            switch(operation) {
+                    Case ("Calc_sum"):
+                    return function Calc_sum(x, y);
+                    break;
+                    Case ("Calc_subst"):
+                    return function Calc_subst(x, y);
+                    break;
+                    Case ("Calc_division"):
+                    return function Calc_division(x, y);
+                    break;
+                    
+            
+            }}
+        var operation = prompt('введите функцию Calc_sum, Calc_subst,Calc_division ');    
+        var a = mathOperation (x,y, operation);    
+        alert ("result of mathOperation" & a);    
+        
+                
+            
+        
+        
+        
+        
+        
+        
+        
+    </script>
+
+
+
+</body>
+
+</html>
