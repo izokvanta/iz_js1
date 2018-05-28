@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw4</title>
+</head>
+
+<body>
+
+    <script>
+        
+//____________________________________________hw4_task1________________________________
+        var a = Math.floor(Math.random() * 1500);
+        alert('Случайное значение: ' + a); 
+        var i = {
+            i: " "
+        };
+        var numSplit = {
+            E: " ",
+            D: " ",
+            S: " "
+        };
+
+        function MathSplit(k) {
+
+            if (k < 1000) {
+                //var aStr = String(k);
+                /*console.log('(Единицы): ' + aStr.substr(2, 1));
+                console.log('(Десятки): ' + aStr.substr(-2, 1));
+                console.log('(Сотни): ' + aStr.substr(-3, 1););*/
+                numSplit.S = ~~(k / 100);
+                numSplit.D = ~~((k - numSplit.S * 100) / 10);
+                numSplit.E = ~~((k - numSplit.S * 100) - numSplit.D * 10);
+
+            } else {
+                return numSplit,
+                alert("Введите значение меньше 1000")
+            };
+
+        }
+
+        MathSplit(a);
+
+        console.log(numSplit);
+    </script>
+
+</body>
+
+</html>
