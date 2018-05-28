@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW5_iz</title>
+
+
+    <style>
+        table {
+            border: 0;
+            border-spacing: 0;
+            border-collapse: collapse;
+            text-align: center;
+
+        }
+
+        td {
+            border: 1px solid #000;
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr id=Chess_Alpha1>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr id=Chess_player1>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr id="Chess_player1_line2">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr id="Chess_player2_line2">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr id="Chess_player2">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr id="Chess_Alpha2">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+
+    </table>
+    <script>
+        function ChessStyleCreate() {
+
+            var elements = document.querySelectorAll('tr > th:last-child'); // находим последние элементы внутри child of table
+
+            var NumS = ['', '1', '2', '3', '4', '5', '6', '7', '8', ' ']; //заполняем цифры справа и переворачиваем их
+            for (el = 1; el < elements.length - 1; el++) {
+                elements[el].innerHTML = NumS[el];
+                elements[el].style.transform = "rotate(180deg)";
+            }
+            var elements1 = document.querySelectorAll('tr > th:first-child'); // находим последние элементы внутри child of table
+
+            for (el = 1; el < elements1.length - 1; el++) {
+                elements1[el].innerHTML = NumS[el];
+            }
+
+            var ChessFigures = [' ', '♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖', ' '];
+
+
+            var Player1 = document.getElementById('Chess_player1'); //расставляем шахматы для первого игрока перевернутые
+            for (i = 1; i < Player1.cells.length - 1; i++) {
+
+                Player1.children[i].innerHTML = ChessFigures[i];
+                //Player1.children[i].style.transform = "rotate(180deg)";
+                Player1.children[i].style.color = "white";
+
+
+            }
+            var ChessFiguresBlack = [' ', '♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜', ' '];
+            var Player2 = document.getElementById('Chess_player2'); //расставляем шахматы для второго игрока 
+            for (i = 1; i < Player2.cells.length - 1; i++) {
+                Player2.children[i].innerHTML = ChessFiguresBlack[i];
+                Player2.children[i].style.color = "black";
+
+            }
+
+            var ChessFiguresBlack1 = ['♟'];
+            var ChessFiguresWhite1 = ['♙'];
+
+            var Player2 = document.getElementById('Chess_player2_line2');
+            for (i = 1; i < Player2.cells.length - 1; i++) {
+                Player2.children[i].innerHTML = ChessFiguresBlack1[0];
+            }
+            var Player1 = document.getElementById('Chess_player1_line2');
+            for (i = 1; i < Player1.cells.length - 1; i++) {
+                Player1.children[i].innerHTML = ChessFiguresWhite1[0];
+                Player1.children[i].style.color = "white";
+                // Player1.children[i].style.transform = "rotate(180deg)"; //не знаю переворачивать или нет, опционно , если переворачивать ,то пропадают границы таблицы, надо с ними решать тогда
+                //Player1.children[i].style.border = "2px","black";
+            }
+
+            var letters2 = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ' ']; //заполняем буквы внизу
+            var ChessA2 = document.getElementById('Chess_Alpha2');
+            l = 0;
+            for (o = 0; o < ChessA2.cells.length; o++) {
+                ChessA2.children[o].innerHTML = letters2[l];
+                l++;
+            }
+            var table = document.body.children[0];
+            var k = 1;
+            //перекрашиваем шахматную доску по условию
+            do {
+                for (var i = 1; i < table.rows.length - 1; i++) {
+
+                    if (table.rows.length % 2 === 0) {
+                        if (i % 2 === 0 && k % 2 != 0) {
+
+                            table.rows[k].cells[i].style.backgroundColor = 'lightgray';
+                        } else if (k % 2 === 0 && i % 2 != 0) {
+                            table.rows[k].cells[i].style.backgroundColor = 'lightgray';
+                        } else {
+                            table.rows[k].cells[i].style.backgroundColor = '#088A68';
+                        }
+                    }
+                }
+                k++;
+            } while (k < 9)
+
+            //Вверху заполняем буквы и перевернуть
+
+            var letters = ['', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A', ' '];
+            for (var a = 0; a < letters.length; a++) {
+                table.rows[0].cells[a].innerHTML = letters[a];
+                table.rows[0].cells[a].style.transform = "rotate(180deg)";
+            }
+        }
+
+        ChessStyleCreate();
+    </script>
+</body>
+
+</html>
