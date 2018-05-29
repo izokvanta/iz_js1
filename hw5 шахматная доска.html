@@ -157,8 +157,9 @@
             }
             var elements1 = document.querySelectorAll('tr > th:first-child'); // находим последние элементы внутри child of table
 
+            var NumS1 = ['', '8', '7', '6', '5', '4', '3', '2', '1', ' ']
             for (el = 1; el < elements1.length - 1; el++) {
-                elements1[el].innerHTML = NumS[el];
+                elements1[el].innerHTML = NumS1[el];
             }
 
             var ChessFigures = [' ', '♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖', ' '];
