@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <link rel="stylesheet" href="lesson7.css">
+    <script src="lesson7.js"></script>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div id="ScoreDin"></div>
+        <div id="snake-field"></div>
+        <div class="buttons">
+             <div id="snake-start">Старт</div>
+            <div id="snake-renew">Новая игра</div>
+        </div>
+    </div>
+
+    <script>
+        
+        //___________________________________________Домашнее задание пункт 1 ______ динамический счёт
+        var scoreD = document.getElementById("ScoreDin");
+        var result_d = document.createElement('p');
+        result_d.innerHTML = "Текущий счёт: "+score;
+        scoreD.appendChild(result_d);
+        
+        //___________________________________________ДоМашнее задание пункт 2 _______создание препядствий
+       
+    function createLimits() {
+    var LimitCreated = false;
+
+    while (!LimitCreated) { //пока лимиты не создали
+        // рандом
+        var limit_x = Math.floor(Math.random() * FIELD_SIZE_X); 
+        var limit_y = Math.floor(Math.random() * FIELD_SIZE_Y);
+        
+
+        var limit_cell = document.getElementsByClassName('cell-' + limit_y + '-' + limit_x)[0];
+        var limit_cell_classes = limit_cell.getAttribute('class').split(' ');
+        
+        
+        
+        
+
+        // проверка на змейку
+        if (!limit_cell_classes.includes('snake-unit')) {
+            var classes = '';
+            for (var i = 0; i < limit_cell_classes.length; i++) {
+                classes += limit_cell_classes[i] + ' ';
+            }
+
+             limit_cell.setAttribute('class', classes + 'limit-unit'); 
+            
+            
+             
+            //_________________________
+         LimitCreated = true;
+           
+           
+        }
+ 
+    }
+        
+}
+
+
+function haveFood(unit) {
+    var check = false;
+
+    var unit_classes = unit.getAttribute('class').split(' ');
+
+    // Если еда
+    if (unit_classes.includes('food-unit')) {
+        check = true;
+        createFood();
+        
+       createLimits() ; //_____________________________________________________________________HW7. п.2 создаем 
+       score++;    
+       scoreD.innerHTML = "Текущий счёт: " +score; 
+        
+        
+
+    }
+    return check;
+}        
+        
+    
+    </script>
+</body>
+</html>
