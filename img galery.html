@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ocean</title>
+
+    <script type="text/javascript">
+        var array = new Array(
+
+            "img/big/1.jpg",
+
+            "img/big/2.jpg",
+
+            "img/big/3.jpg",
+
+        );
+
+
+        var i = 0;
+
+        function left() {
+
+            var image = document.getElementById("rbutton");
+
+            var dis = document.getElementById("dis");
+
+            i--;
+
+            if (i < 0) i = array.length - 1;
+
+            image.src = array[i];
+
+
+
+        }
+
+        function right() {
+
+            var image = document.getElementById("rbutton");
+
+            i++;
+
+            if (i == array.length) i = 0;
+
+            image.src = array[i];
+
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <br>
+
+    <br>
+
+    <br>
+
+    <table align=center>
+
+        <tr>
+            <td>
+                <input id='dis' type='image' src="img/left.png" width='20' height='20' name='left' value='<' onclick='left()' />
+            </td>
+            <td>
+                <script type='text/javascript'>
+                    document.write("<img id = 'rbutton' src = '" + array[0] + "' alt = 'Картинка' width = '500' height = '500' />");
+                </script>
+
+            </td>
+            <td>
+                <input type='image' src="img/right.png" width='20' height='20' name='right' value='>' onclick='right()' />
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+
+
+
+
+
+</body>
+</html>
